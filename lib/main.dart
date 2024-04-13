@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceriesapp/number.dart';
 import 'package:groceriesapp/splash_screen.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class groceriesapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashScreen(),
+      home: CountryScreen(),
     );
   }
 }
