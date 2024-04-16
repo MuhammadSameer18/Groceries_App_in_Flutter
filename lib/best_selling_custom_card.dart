@@ -1,34 +1,31 @@
 import 'package:flutter/material.dart';
 
-class CustomCard extends StatefulWidget {
+class BestSellingCard extends StatefulWidget {
   final double price;
   final int qty;
   final String title;
   final String imagePath;
-
-  CustomCard({
-    required this.title,
-    required this.price,
-    required this.qty,
-    required this.imagePath,
-  });
+  const BestSellingCard(
+      {super.key,
+      required this.price,
+      required this.qty,
+      required this.title,
+      required this.imagePath});
 
   @override
-  State<CustomCard> createState() => _CustomCardState();
+  State<BestSellingCard> createState() => _BestSellingCardState();
 }
 
-class _CustomCardState extends State<CustomCard> {
-  int _currentQty = 0;
-  double _currentPrice = 0;
-
+class _BestSellingCardState extends State<BestSellingCard> {
+  int _bscCurrentQty = 0;
+  double _bscCurrentPrice = 0;
   @override
   void initState() {
     super.initState();
-    _currentQty = widget.qty;
-    _currentPrice = widget.price * _currentQty;
+    _bscCurrentQty = widget.qty;
+    _bscCurrentPrice = widget.price * _bscCurrentQty;
   }
 
-  @override
   Widget build(BuildContext context) {
     return Container(
       width: 173,
@@ -62,7 +59,7 @@ class _CustomCardState extends State<CustomCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "${_currentQty} pcs, Priceg",
+                  "${_bscCurrentQty} pcs, Priceg",
                   style: TextStyle(fontSize: 13),
                 ),
               ],
@@ -84,8 +81,8 @@ class _CustomCardState extends State<CustomCard> {
                 child: FloatingActionButton(
                   onPressed: () {
                     setState(() {
-                      _currentQty *= 2;
-                      _currentPrice = widget.price * _currentQty;
+                      _bscCurrentQty *= 2;
+                      _bscCurrentPrice = widget.price * _bscCurrentQty;
                     });
                   },
                   backgroundColor: Colors.green,

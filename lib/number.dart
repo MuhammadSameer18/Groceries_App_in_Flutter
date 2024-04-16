@@ -20,18 +20,19 @@ class _CountryScreenState extends State<CountryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Enter Your Mobile Number",
-              style: TextStyle(fontSize: 25),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            TextFormField(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Enter Your Mobile Number",
+            style: TextStyle(fontSize: 25),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: TextFormField(
               keyboardType: TextInputType.number,
               textInputAction: TextInputAction.done,
               maxLines: 1,
@@ -76,8 +77,11 @@ class _CountryScreenState extends State<CountryScreen> {
                 labelStyle: TextStyle(color: Colors.grey),
               ),
             ),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 300,
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
